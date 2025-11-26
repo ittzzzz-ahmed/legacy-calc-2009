@@ -1,53 +1,70 @@
-A simple loan calculator written in C++ using a Qt GUI.
+This repository contains the updated and refactored version of the legacy loan calculator project as required in ISE Assignment-2.
 
-Can be compiled with either make or SCons as follows:
-# make
--- OR --
-# scons
 
-The following can be calculated given the correct inputs:
-- Monthly Payment
-- Amount
-- Interest
-- Number of payments
-- Balance
+1. Project Clean-Up
 
-Inputs are the following and should be supplied depending on the aforementioned calculation type:
-- Amount
-- Initial Payment
-- Loan Fee %
-- Interest %
-- Payment
-- Months
+Removed old Qt GUI files and unnecessary or deprecated files
+Cleaned project structure
 
-Usage:
-Input values:
-   -N Set the total loan period in months. Ej: 60
-   -a Set the initial amount. Ej: 19300
-   -ai Set the initial payment, loan will be for (initial amount - initial
-       payment) Ej: 1000, Default 0.0
-   -ca Calculate the initial loan amount, given: monthly payment, loan period,
-       and interest
-   -cb Calculate the loan balance after making several payments, given:
-       loan amount, interest, monthly payment and number of
-       monthly payments made so far
-   -ci Calculate the loan interest, given: loan amount, loan period,
-       and monthly payment
-   -cn Calculate the number of payments needed to pay a loan, given:
-       loan amount, monthly payment, interest
-   -cp Calculate the monthly loan payment, given: loan amount, loan period,
-       and interest
-   -i Set the yearly interest rate. Ej: 6.75
-   -n Set the elapsed period in months. Ej: 32
-   -of Set fees for opening the loan. Ej: 100, Default 0.0
-   -op Set fees for opening the loan, charged as a percentage.
-       Ej: 2.75%, Default 0.0%
-   -p Set the monthly loan payment. Ej: 325.67
 
-Calculations: Mutually Exclusive options, one and only one can be set:
-  -cb -cp -cn -ca -ci 
+2.New Project Structure
 
-Use one of the following options to display this message:
-   -h -help --h --help -?
+├── src/
+│   ├── Loan.cpp
+│   ├── Loan.h
+│   ├── main.cpp
+│
+├── test/
+│   ├── LoanTest.cpp
+│
+├── config.txt
+├── Doxyfile
+├── Report.pdf
+└── README.md
 
-With no options set, a GUI will be launched
+3.Hardcoded Values Removed
+
+Added config.txt
+Code now reads configuration from file instead of hard-coding values
+
+
+4.Input Validation & Error Handling
+
+Implemented validation for Negative values and Overflow
+
+
+5.Unit Testing
+
+Used GoogleTest
+
+Added LoanTest.cpp
+
+Tests implemented are Normal EMI calculation, Invalid input handling and Large tenure boundary
+
+All tests passed successfully
+
+6.Documentation
+
+Used Doxygen
+
+Added Doxyfile
+
+Doxygen comments added to .h and .cpp files
+
+Generates documentation automatically using doxygen Doxyfile
+
+
+7.Final Report
+
+Added Report.pdf summarizing
+
+Requirements
+
+Implementation
+
+Testing
+
+
+Authors
+Mubashir Ahmed 24P-3105
+Muhammed Ahmed 24P-3070
